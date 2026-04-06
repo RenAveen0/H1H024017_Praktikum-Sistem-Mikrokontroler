@@ -37,7 +37,7 @@ void loop() {
 }
 ```
 
-### Penjelasan baris kode
+### Penjelasan Baris Kode
 | Baris Kode | Penjelasan |
 | :---: | :---: |
 | `int timer = 500;` | Menentukan variabel delay sebesar 500 milidetik. |
