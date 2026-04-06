@@ -49,7 +49,7 @@ void loop() {
 \
 ### Penjelasan Baris Kode
 | Baris Kode | Fungsi dan Penjelasan |
-| :--- | :--- |
+| :---: | :---: |
 | `const int ledPin = 6;` | Mendefinisikan nomor pin yang digunakan. Menggunakan const memastikan nilai ini tidak berubah secara tidak sengaja selama program berjalan. |
 | `int timeDelay = 1000;` | Variabel untuk menyimpan durasi delay. Dimulai dari 1000ms (1 detik) untuk memberikan efek awal yang lambat. |
 | `bool isSpeedingUp = true;` | Variabel Boolean (penanda) yang berfungsi untuk menentukan arah perubahan kecepatan (apakah nilai delay harus dikurangi atau ditambah). |
@@ -63,3 +63,4 @@ void loop() {
 | `timeDelay += 100;` | Operator penambahan bertahap. Menambah durasi delay sehingga interval kedipan semakin lama (melambat). |
 | `if (timeDelay >= 1000)` | Mengecek apakah kecepatan sudah kembali ke kondisi terlambat (1 detik). |
 | `delay(3000);` | Memberikan jeda statis selama 3 detik sebelum mengulang siklus dari awal (mempercepat kembali). |
+| :--- | :--- |
