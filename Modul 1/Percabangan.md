@@ -63,4 +63,3 @@ void loop() {
 | `timeDelay += 100;` | Operator penambahan bertahap. Menambah durasi delay sehingga interval kedipan semakin lama (melambat). |
 | `if (timeDelay >= 1000)` | Mengecek apakah kecepatan sudah kembali ke kondisi terlambat (1 detik). |
 | `delay(3000);` | Memberikan jeda statis selama 3 detik sebelum mengulang siklus dari awal (mempercepat kembali). |
-| :--- | :--- |
