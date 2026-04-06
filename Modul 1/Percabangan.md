@@ -19,15 +19,15 @@ void setup() {
 }
 
 void loop() {
-    // 1. Menyalakan LED
+    // Menyalakan LED
     digitalWrite(ledPin, HIGH);
     delay(timeDelay);
 
-    // 2. Mematikan LED
+    // Mematikan LED
     digitalWrite(ledPin, LOW);
     delay(timeDelay);
 
-    // 3. Logika Perubahan Kecepatan
+    // Logika Perubahan Kecepatan
     if (isSpeedingUp) {
         // Jika sedang mempercepat, kurangi delay
         timeDelay -= 100;
