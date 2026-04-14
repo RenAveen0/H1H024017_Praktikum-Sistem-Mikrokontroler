@@ -1,5 +1,5 @@
 # H1H024017_Praktikum-Sistem-Mikrokontroler
 
-Nama: Hana Nur Fathiyyah
-NIM: H1H024017 
+Nama: Hana Nur Fathiyyah\
+NIM: H1H024017\
 Shift: A
