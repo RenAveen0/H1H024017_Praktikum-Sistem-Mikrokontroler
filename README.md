@@ -2,4 +2,5 @@
 
 Nama: Hana Nur Fathiyyah\
 NIM: H1H024017\
-Shift: A
+Shift KRS: C\
+Shift sekarang: A
