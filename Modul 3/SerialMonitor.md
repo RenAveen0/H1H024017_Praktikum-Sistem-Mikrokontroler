@@ -55,6 +55,6 @@ void loop() {
   }
 }
 ```
-![alt text](KomunikasiSerialver2.gif)
+![alt text](SerialMonitorver2.gif)
 \
 4. Lebih baik menggunakan millis. Karena jika menggunakan fungsi delay(), akan terjadi Blocking dimana Arduino akan menghentikan seluruh aktivitas prosesor dan hanya "menunggu" sampai waktu habis. Jika menggunakan millis(), akan terjadi Non-Blocking, dimana Arduino tetap menjalankan perintah lain dalam perulangan loop() secara terus-menerus. Fungsi millis() hanya mengecek apakah selisih waktu saat ini dengan waktu sebelumnya sudah mencapai target.
