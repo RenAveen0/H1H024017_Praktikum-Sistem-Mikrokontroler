@@ -7,6 +7,7 @@
 ## Jawaban
 1. Berikut adalah penggambaran schematic Button Seven Segment.\
 <img src="Button Seven Segment.jpg" alt="Button Seven Segment" width="500">
+
 2. Karena INPUT_PULLUP digunakan untuk mengaktifkan resistor internal dalam menjaga stabilitas sinyal (mencegah floating) dan menyederhanakan rangkaian tanpa perlu tambahan resistor fisik.
 3. Bisa disebabkan oleh kerusakan komponen/kabel kendor (hardware) atau kesalahan pemetaan pin dan pola bit dalam kode (software).
 4. Berikut adalah kode yang telah dimodifikasi untuk mendukung penambahan (increment) dan pengurangan (decrement).

@@ -7,6 +7,7 @@
 ## Jawaban
 1. Berikut adalah penggambaran schematic Seven Segment.\
 <img src="Seven Segment.jpg" alt="Button Seven Segment" width="500">
+
 2. Jika nilai num lebih besar dari 15 (misalnya 16, 17, dst.), maka akan terjadi Array Out of Bounds (akses di luar batas array). Dalam bahasa C/C++ (dasar Arduino), array digitPattern didefinisikan dengan ukuran [16][8]. Jika program mencoba mengakses indeks ke-16 atau lebih, ia akan mengambil data dari alamat memori yang tidak seharusnya.
 3. Program ini menggunakan jenis Common Anode (CA). Alasannya: Program ini menggunakan Common Anode karena penggunaan operator NOT (!) pada fungsi displayDigit menyebabkan segmen menyala saat pin Arduino mengirimkan sinyal LOW.
 4. Berikut adalah kode yang telah dimodifikasi agar hitungan berjalan mundur dari F ke 0.
