@@ -6,7 +6,7 @@
 
 ## Jawaban
 1. Data dari keyboard dikirim melalui Serial Monitor ke buffer Arduino, lalu dibaca oleh fungsi Serial.read() untuk dieksekusi menjadi perintah digitalWrite (HIGH/LOW) pada pin LED.
-2.Fungsi ini memastikan ada data di buffer sebelum dibaca. Jika dihilangkan, Serial.read() akan terus mengambil nilai kosong (-1) di setiap siklus perulangan dan bisa mengacaukan logika program.
+2. Fungsi ini memastikan ada data di buffer sebelum dibaca. Jika dihilangkan, Serial.read() akan terus mengambil nilai kosong (-1) di setiap siklus perulangan dan bisa mengacaukan logika program.
 3. Berikut program yang sudah di modifikasi agar terus berkedip ketika menerima input 2.
 
 Kode Program
