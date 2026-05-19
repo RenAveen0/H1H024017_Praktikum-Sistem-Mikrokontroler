@@ -5,7 +5,8 @@ Nama: Hana Nur Fathiyyah\
 NIM: H1H024017\
 Nama Asisten Praktikum: Billy Hermawan\
 Tanggal Percobaan: 31 Maret 2026\
-Ruangan: Laboratorium Baru 
+Ruangan: Laboratorium Baru\
+Jurnal: https://drive.google.com/file/d/1a3m4TbgXmxjKctTKOlMH5CNFqq_Tomtt/view?usp=drive_link
 
 ### 🔍 Ringkasan Percobaan
 1. Percobaan 1A: Percabangan\
@@ -30,22 +31,22 @@ Ruangan: Laboratorium Baru
 
   <tr align="center">
     <td>
-      <img width="150" height="150" alt="img1" src="../Laporan Praktikum/Komponen/arduino.jpeg" /><br>
+      <img width="150" height="150" alt="img1" src="../Laporan Praktikum/Komponen/arduino.jpeg"><br>
     </td>
     <td>
-      <img width="150" height="150" alt="img2" src="../Laporan Praktikum/Komponen/breadboard.jpeg" /><br>
+      <img width="150" height="150" alt="img2" src="../Laporan Praktikum/Komponen/breadboard.jpeg"><br>
     </td>
     <td>
-      <img width="150" height="150" alt="img3" src="../Laporan Praktikum/Komponen/led.jpeg" /><br>
+      <img width="150" height="150" alt="img3" src="../Laporan Praktikum/Komponen/led.jpeg"><br>
     </td>
     <td>
-      <img width="150" height="150" alt="img4" src="../Laporan Praktikum/Komponen/resistor.jpeg" /><br>
+      <img width="150" height="150" alt="img4" src="../Laporan Praktikum/Komponen/resistor.jpeg"><br>
     </td>
     <td>
-      <img width="150" height="150" alt="img5" src="../Laporan Praktikum/Komponen/kabel jumper.jpeg" /><br>
+      <img width="150" height="150" alt="img5" src="../Laporan Praktikum/Komponen/kabel jumper.jpeg"><br>
     </td>
     <td>
-      <img width="150" height="150" alt="img6" src="../Laporan Praktikum/Komponen/kabel usb type b.jpeg" /><br>
+      <img width="150" height="150" alt="img6" src="../Laporan Praktikum/Komponen/kabel usb type b.jpeg"><br>
     </td>
   </tr>
 </table>
