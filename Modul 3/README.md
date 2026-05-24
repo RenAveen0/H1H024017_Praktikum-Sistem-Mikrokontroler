@@ -1,8 +1,25 @@
-# Modul ... : 
+# Modul 3 : Protokol Komunikasi
 
 ## 🎯 Tujuan Praktikum
 
+1. Memahami konsep, prinsip kerja, dan perbedaan dari protokol komunikasi serial (UART, I2C, dan SPI) pada mikrokontroler.
+2. Mengimplementasikan fitur modul ADC (Analog-to-Digital Converter) internal untuk membaca perubahan tegangan linear dari sensor analog.
+3. Menerapkan metode manajemen waktu *non-blocking* menggunakan fungsi `millis()` untuk membangun sistem kontrol multitasking yang responsif.
+
 ## 📄 Dasar Teori
+
+Protokol komunikasi serial digunakan untuk memfasilitasi pertukaran data antar perangkat elektronik secara efisien dengan meminimalkan penggunaan pin fisik pada mikrokontroler.
+
+1. UART (Universal Asynchronous Receiver-Transmitter) Protokol komunikasi serial asinkron yang bekerja tanpa sinyal *clock* bersama, melainkan menggunakan kesepakatan kecepatan data (*baud rate*). Transmisi data dilakukan melalui sepasang jalur pin utama, yaitu RX (Receiver) dan TX (Transmitter).
+
+2. I2C (Inter-Integrated Circuit) Protokol serial sinkron berarsitektur *master-slave* yang menggunakan dua jalur bus, yaitu SDA (Serial Data) dan SCL (Serial Clock). Setiap perangkat *slave* memiliki alamat unik 7-bit, serta menggunakan konfigurasi saluran *open-drain* yang membutuhkan resistor *pull-up* eksternal/internal.
+
+3. SPI (Serial Peripheral Interface) Protokol serial sinkron *full-duplex* (mengirim dan menerima data bersamaan) yang ideal untuk transfer data berkecepatan tinggi. Protokol ini menggunakan empat jalur pin: SCK (*Clock*), MOSI (*Master Out Slave In*), MISO (*Master In Slave Out*), dan SS (*Slave Select*).
+
+4. ADC (Analog-to-Digital Converter) Modul internal mikrokontroler yang berfungsi mengubah sinyal tegangan kontinu analog (0–5V) menjadi representasi data digital diskrit 10-bit dengan rentang nilai hitungan antara 0 hingga 1023.
+
+5. Manajemen Waktu (`delay()` vs `millis()`) * `delay()`: Bersifat *blocking* karena menghentikan total eksekusi siklus CPU, membuat program tidak responsif terhadap data atau input baru.
+* `millis()`: Bersifat *non-blocking* dengan memanfaatkan pencacah waktu internal mikrokontroler sejak program pertama kali dijalankan, memungkinkan jalannya tugas multitasking.
 
 ## 🚀 Tugas Pendahuluan
 
@@ -15,38 +32,51 @@ Dalam percobaan sederhana ini, berikut alat dan bahan yang digunakan:
 
 <div align="center">
 <table border="1" cellpadding="10" cellspacing="0" width="100%">
-  <tr>
-    <th>Arduino</th>
-    <th>Potensiometer</th>
-    <th>Motor Servo</th>
+  <tr align="center">
+    <th>Arduino Uno R3</th>
+    <th>LCD 16x2 I2C</th>
+    <th>Potensiometer 10 kΩ</th>
+    <th>Resistor 220 Ω</th>
     <th>LED</th>
+    <th>Breadboard</th>
+    <th>Kabel Jumper</th>
   </tr>
 
   <tr align="center">
     <td>
-      <img width="192" height="136,1" alt="arduino_uno" src="https://github.com/user-attachments/assets/3e61e208-bb23-42aa-bbef-0ac539279ce0" /><br>
+      <img width="150" height="150" alt="img1" src="../Modul 3/Laporan Praktikum/Komponen/arduino.jpeg"><br>
     </td>
     <td>
-      <img width="179,5" height="175,75" alt="image" src="https://github.com/user-attachments/assets/f44c78e5-fd37-47e0-a2f4-0a5af2b6c86a" />
+      <img width="150" height="150" alt="img2" src="../Modul 3/Laporan Praktikum/Komponen/lcd i2c.jpeg"><br>
     </td>
     <td>
-      <img width="318" height="260" alt="image" src="https://github.com/user-attachments/assets/e54280b7-5fd3-4ce7-b4f8-41163ed3bed3" /><br>
+      <img width="150" height="150" alt="img3" src="../Modul 3/Laporan Praktikum/Komponen/potensiometer.jpeg"><br>
     </td>
     <td>
-      <img width="54" height="134" alt="RedLED_Fritzing" src="https://github.com/user-attachments/assets/80556570-c129-43fa-904b-39eac5677a2d" />
+      <img width="150" height="150" alt="img4" src="../Modul 3/Laporan Praktikum/Komponen/resistor.jpeg"><br>
     </td>
-  </tr>
-
-  <tr align="center">
-    <td>Arduino Uno, atau lainnya</td>
-    <td>Potensiometer</td>
-    <td>Motor Servo</td>
-    <td>LED Merah</td>
+    <td>
+      <img width="150" height="150" alt="img5" src="../Modul 3/Laporan Praktikum/Komponen/led.jpeg"><br>
+    </td>
+    <td>
+      <img width="150" height="150" alt="img6" src="../Modul 3/Laporan Praktikum/Komponen/breadboard.jpeg"><br>
+    </td>
+    <td>
+      <img width="150" height="150" alt="img6" src="../Modul 3/Laporan Praktikum/Komponen/kabel jumper.jpeg"><br>
+    </td>
   </tr>
 </table>
 </div>
 
 ## 💻 Percobaan
+
+Eksperimen pada modul ini dibagi menjadi dua skenario utama untuk menguji efisiensi pertukaran data internal maupun eksternal sistem mikrokontroler.
+
+1. Percobaan 3A: Komunikasi Serial (UART) 
+  * Menguji respons interaktif mikrokontroler menerima bit data serial eksternal dari komputer. Karakter perintah '1' atau '0' dikirim via Serial Monitor untuk mengubah level logika output pin 8, sekaligus mengirimkan teks balasan kembali ke monitor komputer.
+
+2. Percobaan 3B: Inter-Integrated Circuit (I2C) 
+  * Menguji efisiensi pengiriman data terstruktur ke modul eksternal display. Nilai tegangan kontinu dari potensiometer dibaca oleh pin ADC A0 (skala 0-1023), kemudian dipetakan ke dalam format teks numerik beserta visualisasi grafik batang sepanjang 16 kolom pada layar LCD 16x2.
 
 ## 📚 Pertanyaan Praktikum
 
