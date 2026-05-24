@@ -1,8 +1,22 @@
 # Modul 2 : Pemrograman GPIO
 
 ## 🎯 Tujuan Praktikum
+1. Memahami konsep dasar dan konfigurasi General Purpose Input/Output (GPIO) sebagai fungsi input dan output digital pada mikrokontroler Arduino.
+2. Mengimplementasikan penggunaan array pola segmen untuk mengendalikan Seven Segment Display tipe Common Anode secara efisien.
+3. Memahami mekanisme pembacaan input digital dari push button menggunakan mode `INPUT_PULLUP` internal dan metode *edge detection*.
 
 ## 📄 Dasar Teori
+
+GPIO (General Purpose Input/Output) merupakan gerbang utama bagi mikrokontroler untuk berkomunikasi dengan perangkat eksternal melalui manipulasi logika digital digital menggunakan fungsi `pinMode()`, `digitalWrite()`, dan `digitalRead()`.
+
+1. Seven Segment Display \
+Perangkat visual yang terdiri dari gabungan 7 LED baris (a-g) dan 1 titik desimal (dp). Pada tipe Common Anode (CA), seluruh anoda LED disatukan ke jalur VCC (+5V) sehingga segmen akan aktif saat pin Arduino mengirimkan sinyal `LOW` (*active low*). Penggunaan resistor pembatas arus (seperti 220 Ω) wajib dipasang pada tiap segmen untuk mencegah kerusakan sirkuit akibat arus berlebih.
+
+2. Input Pull-Up Internal \
+Arduino menyediakan fitur `INPUT_PULLUP` yang mengaktifkan resistor pull-up internal (20-50 kΩ). Mode ini sangat berguna untuk aplikasi push button karena menjaga kestabilan sinyal saat saklar terbuka agar pin input tidak berada dalam kondisi mengambang (*floating*) akibat noise elektromagnetik.
+
+3. Efek Bouncing & Edge Detection \
+Sakelar mekanis seperti push button menghasilkan getaran mekanis (*bounce*) saat ditekan yang dapat terbaca sebagai sinyal input palsu yang berulang. Algoritma *edge detection* mengatasi hal ini dengan cara membandingkan status tombol saat ini dengan status sebelumnya untuk mendeteksi momen transisi pulsa yang presisi (misalnya transisi *HIGH* ke *LOW*).
 
 ## 🚀 Tugas Pendahuluan
 
@@ -17,37 +31,49 @@ Dalam percobaan sederhana ini, berikut alat dan bahan yang digunakan:
 <table border="1" cellpadding="10" cellspacing="0" width="100%">
   <tr align="center">
     <th>Arduino Uno R3</th>
+    <th>Seven Segment CA</th>
+    <th>Push Button</th>
+    <th>Resistor 220 Ω</th>
     <th>Breadboard</th>
-    <th>LED</th>
-    <th>Resistor</th>
     <th>Kabel Jumper</th>
-    <th>Kabel USB Type B</th>
   </tr>
 
   <tr align="center">
     <td>
-      <img width="150" height="150" alt="img1" src="../Modul 1/Laporan Praktikum/Komponen/arduino.jpeg"><br>
+      <img width="150" height="150" alt="img1" src="../Modul 2/Laporan Praktikum/Komponen/arduino.jpeg"><br>
     </td>
     <td>
-      <img width="150" height="150" alt="img2" src="../Modul 1/Laporan Praktikum/Komponen/breadboard.jpeg"><br>
+      <img width="150" height="150" alt="img2" src="../Modul 2/Laporan Praktikum/Komponen/seven segment.jpeg"><br>
     </td>
     <td>
-      <img width="150" height="150" alt="img3" src="../Modul 1/Laporan Praktikum/Komponen/led.jpeg"><br>
+      <img width="150" height="150" alt="img3" src="../Modul 2/Laporan Praktikum/Komponen/push button.jpeg"><br>
     </td>
     <td>
-      <img width="150" height="150" alt="img4" src="../Modul 1/Laporan Praktikum/Komponen/resistor.jpeg"><br>
+      <img width="150" height="150" alt="img4" src="../Modul 2/Laporan Praktikum/Komponen/resistor.jpeg"><br>
     </td>
     <td>
-      <img width="150" height="150" alt="img5" src="../Modul 1/Laporan Praktikum/Komponen/kabel jumper.jpeg"><br>
+      <img width="150" height="150" alt="img5" src="../Modul 2/Laporan Praktikum/Komponen/breadboard.jpeg"><br>
     </td>
     <td>
-      <img width="150" height="150" alt="img6" src="../Modul 1/Laporan Praktikum/Komponen/kabel usb type b.jpeg"><br>
+      <img width="150" height="150" alt="img6" src="../Modul 2/Laporan Praktikum/Komponen/kabel jumper.jpeg"><br>
     </td>
   </tr>
 </table>
 </div>
 
 ## 💻 Percobaan
+
+Eksperimen pada modul ini dibagi menjadi dua skenario utama untuk mengamati aplikasi fungsi keluaran dan masukan digital pada pin GPIO mikrokontroler.
+
+1. Percobaan 2A: Seven Segment (Output)
+Eksperimen ini menguji kemampuan mikrokontroler dalam memetakan data biner menjadi informasi visual statis maupun sekuensial secara berurutan.
+* Skenario: Menampilkan karakter heksadesimal (0-F) secara berurutan pada Seven Segment Display.
+* Aliran Program: Program membaca pola biner dari array konstanta `digitPattern` lalu menampilkannya lewat fungsi khusus dengan jeda waktu otomatis sebesar 1000 ms per karakter.
+
+2. Percobaan 2B: Button Seven Segment (Input)
+Eksperimen ini menguji integrasi komponen input mekanis dengan logika pemrosesan data masukan yang responsif tanpa interferensi gangguan *bouncing*.
+* Skenario: Mengontrol perubahan nilai counter pada Seven Segment menggunakan satu tombol push button.
+* Aliran Program: Program membaca transisi penekanan tombol menggunakan teknik *edge detection*. Jika tombol terdeteksi ditekan, nilai hitungan bertambah satu satuan (+1) dan tampilan layar diperbarui secara stabil.
 
 ## 📚 Pertanyaan Praktikum
 
