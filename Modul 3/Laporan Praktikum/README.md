@@ -50,7 +50,7 @@ Jurnal: https://drive.google.com/file/d/1CK7eZ0flsvw8jXOYkBGwD-DfvygKqtRM/view?u
       <img width="150" height="150" alt="img6" src="../Laporan Praktikum/Komponen/breadboard.jpeg"><br>
     </td>
     <td>
-      <img width="150" height="150" alt="img6" src="../Laporan Praktikum/Komponen/kabel jumper.jpeg"><br>
+      <img width="150" height="150" alt="img7" src="../Laporan Praktikum/Komponen/kabel jumper.jpeg"><br>
     </td>
   </tr>
 </table>
