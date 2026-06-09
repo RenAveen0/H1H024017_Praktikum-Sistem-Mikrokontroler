@@ -139,6 +139,7 @@ void loop() {
 ```
 <img width="500" alt="ss1" src="../Modul 3/Percobaan 1/Dokumentasi/SerialMonitorver2.gif">
 <br>
+
 4. Lebih baik menggunakan millis. Karena jika menggunakan fungsi delay(), akan terjadi Blocking dimana Arduino akan menghentikan seluruh aktivitas prosesor dan hanya "menunggu" sampai waktu habis. Jika menggunakan millis(), akan terjadi Non-Blocking, dimana Arduino tetap menjalankan perintah lain dalam perulangan loop() secara terus-menerus. Fungsi millis() hanya mengecek apakah selisih waktu saat ini dengan waktu sebelumnya sudah mencapai target.
 
 ### B. I2C
