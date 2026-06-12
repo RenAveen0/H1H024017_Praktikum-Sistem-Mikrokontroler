@@ -6,7 +6,7 @@ NIM: H1H024017\
 Nama Asisten Praktikum: Billy Hermawan\
 Tanggal Percobaan: 5 Mei 2026\
 Ruangan: Laboratorium Baru\
-Jurnal:
+Jurnal: https://drive.google.com/file/d/11SHRkat3G648P_TGkrhL0GMlrwalOYbw/view?usp=drive_link
 
 ### 🔍 Ringkasan Percobaan
 1. Percobaan 5A: Multitasking\

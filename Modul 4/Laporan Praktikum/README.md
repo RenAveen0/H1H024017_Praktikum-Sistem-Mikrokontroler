@@ -6,7 +6,7 @@ NIM: H1H024017\
 Nama Asisten Praktikum: Billy Hermawan\
 Tanggal Percobaan: 28 April 2026\
 Ruangan: Laboratorium Baru\
-Jurnal:
+Jurnal: https://drive.google.com/file/d/1_oGAy216J62bn1TKeywufeeWHUrgpiNU/view?usp=drive_link
 
 ### 🔍 Ringkasan Percobaan
 1. Percobaan 4A: Analog to Digital Converter (ADC)\

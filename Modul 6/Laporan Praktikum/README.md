@@ -6,7 +6,7 @@ NIM: H1H024017\
 Nama Asisten Praktikum: Billy Hermawan\
 Tanggal Percobaan: 12 Mei 2026\
 Ruangan: Laboratorium Baru\
-Jurnal: 
+Jurnal: https://drive.google.com/file/d/1DaSUPvTA3oIiq2QoTIPWKap8gzqkMbOV/view?usp=drive_link
 
 ### 🔍 Ringkasan Percobaan
 1. Percobaan 6A: External Interrupt\
